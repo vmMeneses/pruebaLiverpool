@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red_liverpool_promocion">#E61506</color>
+    <color name="red_liverpool_noaplica">#5E5858</color>
+    <color name="black_liverpool_promocion">#2C2A2A</color>
+    <color name="blue_return_arrow">#2754DF</color>
+</resources>

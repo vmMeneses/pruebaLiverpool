@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="20dp"
+    >
+
+    <ImageView
+        android:id="@+id/ImageViewProduct"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="H, 4:3"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/TextViewName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text ="Nombre del producto"
+        android:textStyle="bold"
+        android:textColor="@color/black_liverpool_promocion"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/ImageViewProduct"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="30dp"
+        />
+    <TextView
+        android:id="@+id/TextViewPrecioDescuento"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text ="$1,000.99"
+        android:textStyle="bold"
+        android:textColor="@color/red_liverpool_noaplica"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/TextViewName"
+        app:layout_constraintStart_toStartOf="@id/TextViewName"
+        app:layout_constraintEnd_toEndOf="@id/TextViewName"
+        android:layout_marginTop="10dp"
+    />
+
+    <TextView
+        android:id="@+id/TextViewPrecio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text ="$899.99"
+        android:textStyle="bold"
+        android:textColor="@color/red_liverpool_promocion"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/TextViewPrecioDescuento"
+        app:layout_constraintStart_toStartOf="@id/TextViewPrecioDescuento"
+        app:layout_constraintEnd_toEndOf="@id/TextViewPrecioDescuento"
+        android:layout_marginTop="10dp"
+        />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/TextViewPrecio"
+        app:layout_constraintEnd_toEndOf="@id/TextViewPrecio"
+        app:layout_constraintTop_toBottomOf="@id/TextViewPrecio"
+        android:gravity="start"
+        android:layout_marginTop="10dp"
+        >
+        <androidx.cardview.widget.CardView
+            android:id="@+id/color1"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="5dp"
+            app:cardCornerRadius="50dp"
+            android:backgroundTint="@color/red_liverpool_promocion"
+            />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/color2"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="5dp"
+            app:cardCornerRadius="50dp"
+            android:backgroundTint="@color/red_liverpool_promocion"
+            />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/color3"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="5dp"
+            app:cardCornerRadius="50dp"
+            android:backgroundTint="@color/red_liverpool_promocion"
+            />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/color4"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="5dp"
+            app:cardCornerRadius="50dp"
+            android:backgroundTint="@color/red_liverpool_promocion"
+            />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/color5"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="5dp"
+            app:cardCornerRadius="50dp"
+            android:backgroundTint="@color/red_liverpool_promocion"
+            />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
