@@ -1,11 +1,13 @@
 package com.meneses.appliverpool.ui.productlist.view
 
+import android.content.Context.INPUT_METHOD_SERVICE
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -41,14 +43,13 @@ class ListProductFragment : Fragment() {
         initRecycler()
         initUIState()
         initObserver()
-        /*binding.EditTextSearch.addTextChangedListener {
 
-        }*/
         binding.ButtonSearch.setOnClickListener {
             val word = binding.EditTextSearch.text.toString().trim()
             Log.e("ResponseGeneric","=> $word")
-            if(word.length > 10){
+            if(word.length > 7){
                 productViewModel.getProductSerachWord(word)
+                hideKeyboard()
             }
         }
     }
@@ -64,8 +65,6 @@ class ListProductFragment : Fragment() {
     }
 
     private fun initObserver() {
-
-
         productViewModel.isLoading.observe(viewLifecycleOwner){  isVisible ->
             binding.progressbaProducts.visibility= if (isVisible) View.VISIBLE else View.GONE
         }
@@ -77,6 +76,13 @@ class ListProductFragment : Fragment() {
 
     private fun initUIState() {
 
+    }
+
+    private fun hideKeyboard() {
+        val imm = activity?.getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        view.let {
+            imm.hideSoftInputFromWindow(it?.windowToken, 0)
+        }
     }
 
 

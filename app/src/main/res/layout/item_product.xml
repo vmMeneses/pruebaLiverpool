@@ -9,13 +9,13 @@
 
     <ImageView
         android:id="@+id/ImageViewProduct"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="H, 4:3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:src="@drawable/ic_launcher_foreground"
+        android:layout_marginBottom="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/Divider"
         />
 
     <TextView
@@ -25,7 +25,7 @@
         tools:text ="Nombre del producto"
         android:textStyle="bold"
         android:textColor="@color/black_liverpool_promocion"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@id/ImageViewProduct"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -38,7 +38,7 @@
         tools:text ="$1,000.99"
         android:textStyle="bold"
         android:textColor="@color/red_liverpool_noaplica"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="@id/TextViewName"
         app:layout_constraintStart_toStartOf="@id/TextViewName"
         app:layout_constraintEnd_toEndOf="@id/TextViewName"
@@ -52,21 +52,25 @@
         tools:text ="$899.99"
         android:textStyle="bold"
         android:textColor="@color/red_liverpool_promocion"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="@id/TextViewPrecioDescuento"
         app:layout_constraintStart_toStartOf="@id/TextViewPrecioDescuento"
         app:layout_constraintEnd_toEndOf="@id/TextViewPrecioDescuento"
         android:layout_marginTop="10dp"
         />
     <LinearLayout
+        android:id="@+id/LinerarColors"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="@id/TextViewPrecio"
         app:layout_constraintEnd_toEndOf="@id/TextViewPrecio"
         app:layout_constraintTop_toBottomOf="@id/TextViewPrecio"
+        app:layout_constraintBottom_toBottomOf="@id/Divider"
         android:gravity="start"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        android:visibility="visible"
         >
         <androidx.cardview.widget.CardView
             android:id="@+id/color1"
@@ -108,8 +112,44 @@
             app:cardCornerRadius="50dp"
             android:backgroundTint="@color/red_liverpool_promocion"
             />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/color6"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="5dp"
+            app:cardCornerRadius="50dp"
+            android:backgroundTint="@color/red_liverpool_promocion"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/color7"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="5dp"
+            app:cardCornerRadius="50dp"
+            android:backgroundTint="@color/red_liverpool_promocion"
+            />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/color8"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="5dp"
+            app:cardCornerRadius="50dp"
+            android:backgroundTint="@color/red_liverpool_promocion"
+            />
 
     </LinearLayout>
+
+    <View
+        android:id="@+id/Divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/divider_product"
+        android:padding="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

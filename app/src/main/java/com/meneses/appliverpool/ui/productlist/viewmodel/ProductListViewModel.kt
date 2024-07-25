@@ -19,14 +19,10 @@ class ProductListViewModel @Inject constructor(
     val dataProducts = MutableLiveData<List<Record>>()
 
 
-    fun getProductSerachWord(serach:String =""){
+    fun getProductSerachWord(search:String =""){
         viewModelScope.launch {
             isLoading.postValue(true)
-            getProductWord(serach){
-                Log.e("MyViewModel","=> ${it[0]}")
-
-                dataProducts.value = it
-            }
+            dataProducts.value = getProductWord(search)
             isLoading.postValue(false)
         }
     }

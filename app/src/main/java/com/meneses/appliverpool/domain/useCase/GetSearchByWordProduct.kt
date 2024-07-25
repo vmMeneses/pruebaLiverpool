@@ -9,16 +9,8 @@ class GetSearchByWordProduct @Inject constructor(
     private val productRepository: ProductRepository
 ){
 
-    suspend operator fun invoke(search:String, responseData: (List<Record>) ->Unit) {
-        productRepository.getProducts(search) {
-            Log.e("ResponseGeneric"," ${it.msg}")
-            Log.e("ResponseGeneric"," ${it.data}")
-            if(it.data != null){
-                it.data?.plpResults?.records?.let { listData -> responseData(listData) }
-            }
-        }
+    suspend operator fun invoke(search:String) =  productRepository.getProducts(search)
+        //Log.e("ListProducts"," ==> $listProducts")
 
-
-    }
 
 }

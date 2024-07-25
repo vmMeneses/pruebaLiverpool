@@ -11,6 +11,6 @@ interface ApiClientProduct {
     suspend fun getProducts(
         @Query("search-string") search:String = "Iphone 15",
         @Query("page-number") page :Int = 1
-    ): Response<ResponseLiverpool>
+    ): ResponseLiverpool
 
 }
