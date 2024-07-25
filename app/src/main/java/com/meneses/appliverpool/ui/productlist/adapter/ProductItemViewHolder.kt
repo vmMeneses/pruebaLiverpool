@@ -9,7 +9,7 @@ import com.meneses.appliverpool.R
 import com.meneses.appliverpool.data.response.liverpool.Record
 import com.meneses.appliverpool.databinding.ItemProductBinding
 
-class ProductItemViewHolder(view: View): RecyclerView.ViewHolder(view) {
+class ProductItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val binding = ItemProductBinding.bind(view)
     fun render(product: Record) {
@@ -24,20 +24,24 @@ class ProductItemViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
         binding.TextViewPrecio.text = "$ ${product.promoPrice}"
         binding.TextViewPrecioDescuento.text = "$ ${product.listPrice}"
-        val listViewColor = listOf(  binding.color1,  binding.color2,  binding.color3 , binding.color4 , binding.color5 , binding.color6)
-        if(product.variantsColor.size > 0){
+        val listViewColor = listOf(
+            binding.color1, binding.color2,
+            binding.color3, binding.color4,
+            binding.color5, binding.color6,
+            binding.color7, binding.color8
+        )
+        if (product.variantsColor.size > 0) {
             binding.LinerarColors.visibility = View.VISIBLE
             val tamano = product.variantsColor.size
-            for(color in product.variantsColor){
-                Log.e("Colors"," ${color.colorHex}")
-                binding.color1.setCardBackgroundColor(R.color.blue_return_arrow)
+
+            for (color in product.variantsColor) {
+                Log.e("Colors", " ${color.colorHex}")
             }
-        }else{
+
+        } else {
             binding.LinerarColors.visibility = View.GONE
         }
     }
-
-
 
 
 }
