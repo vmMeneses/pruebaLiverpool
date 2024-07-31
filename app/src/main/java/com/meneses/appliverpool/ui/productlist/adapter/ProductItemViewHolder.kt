@@ -34,9 +34,26 @@ class ProductItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             binding.LinerarColors.visibility = View.VISIBLE
             val tamano = product.variantsColor.size
 
+
+            var i = 0
             for (color in product.variantsColor) {
-                Log.e("Colors", " ${color.colorHex}")
+                Log.e("Colors", "Hex ${color.colorHex}")
+                Log.e("Colors", "Url ${color.colorImageURL}")
+                Log.e("Colors", "Name ${color.colorName}")
+
             }
+
+            do{
+                listViewColor[i].visibility = View.VISIBLE
+                listViewColor[i].setCardBackgroundColor(R.color.blue_return_arrow)
+                i++
+            }while( i != tamano)
+
+
+
+
+
+
 
         } else {
             binding.LinerarColors.visibility = View.GONE
